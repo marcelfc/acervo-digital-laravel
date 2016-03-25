@@ -35,6 +35,7 @@
                     @endforeach
                     </tbody>
                 </table>
+                {!! $rows->render() !!}
             </div>
             @endif
         </div>

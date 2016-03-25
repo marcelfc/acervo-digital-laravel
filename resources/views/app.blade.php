@@ -39,6 +39,7 @@
 
 </head>
 <body>
+	@include('admin.acervo.partials.modal_delete')
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -58,8 +59,8 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> Acervo <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ route('acervo.index') }}"><span class="glyphicon glyphicon-search"></span> Vizualizar Acervo</a></li>
-								<li><a href="{{ route('acervo.create') }}"><span class="glyphicon glyphicon-plus"></span> Adicionar no Acervo</a></li>
+								<li><a href="{{ route('acervo.index') }}"><span class="glyphicon glyphicon-folder-close"></span>  Listar Acervos </a></li>
+								<li><a href="{{ route('acervo.create') }}"><span class="glyphicon glyphicon-plus"></span>  Adicionar no Acervo</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
@@ -105,53 +106,7 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.js"></script>
 
-	<script type="text/javascript">
-		var baseUrl = "{{ url('/') }}";
-
-		Dropzone.options.myDropzone = {
-			url: baseUrl + "/acervo/file_upload",
-			autoProcessQueue: false,
-			uploadMultiple: true,
-			parallelUploads: 100,
-			maxFiles: 100,
-			acceptedFiles: "image/*",
-
-			init: function () {
-
-				var submitButton = document.querySelector("#submit-all");
-				var wrapperThis = this;
-
-				submitButton.addEventListener("click", function () {
-					wrapperThis.processQueue();
-				});
-
-				this.on("addedfile", function (file) {
-
-					// Create the remove button
-					var removeButton = Dropzone.createElement("<button class='btn btn-lg dark'>Remove File</button>");
-
-					// Listen to the click event
-					removeButton.addEventListener("click", function (e) {
-						// Make sure the button click doesn't submit the form:
-						e.preventDefault();
-						e.stopPropagation();
-
-						// Remove the file preview.
-						wrapperThis.removeFile(file);
-						// If you want to the delete the file on the server as well,
-						// you can do the AJAX request here.
-					});
-
-					// Add the button to the file preview element.
-					file.previewElement.appendChild(removeButton);
-				});
-
-				this.on('sendingmultiple', function (data, xhr, formData) {
-					formData.append("Username", $("#Username").val());
-				});
-			}
-		};
-	</script>
+	<script src="/js/admin/modal.js"></script>
 
 </body>
 </html>

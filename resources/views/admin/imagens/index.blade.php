@@ -8,11 +8,13 @@
 
         <div class="panel-body">
 
+            @if(empty($rows[0]))
+                <h3 class="alert alert-danger">Ops! Nenhum dado foi encontrado:( </h3>
+            @else
+
             @include('admin.acervo.partials.search')
 
-            @if(empty($rows))
-                <h2>Não há documentos cadastrados</h2>
-            @else
+
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
                     <th>Titulo</th>
@@ -29,8 +31,8 @@
                             <td>{{ $row->data_publicacao }}</td>
                             <td>{{ $row->classificacao }}</td>
                             <td class="actions">
-                                <div class="pull-right">
-                                    <a class="btn btn-danger pull-right" onclick="return confirm('Deseja realmente excluir?')" href="/acervo/delete/{{$row->id}}"><i class="glyphicon glyphicon-trash"></i></a>
+                                <div class="pull-center">
+                                    @include('admin.acervo.partials.form-delete', [ 'id' => $row->id ])
                                     <a class="btn btn-default pull-right" href="{{ route('acervo.edit', ['id' => $row->id]) }}"><i class="glyphicon glyphicon-pencil"></i></a>
                                     <a class="btn btn-info pull-right" href="{{ route('acervo.show', ['id' => $row->id]) }}"><i class="glyphicon glyphicon-eye-open"></i></a>
                                 </div>

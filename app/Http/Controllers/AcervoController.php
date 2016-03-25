@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Redirect;
 use Laracasts\Flash\Flash;
 use Response;
 
@@ -41,7 +42,7 @@ class AcervoController extends Controller {
 
 	public function show($id)
 	{
-
+		return Redirect::route('imagem.index', array('acervo' => $id));
 	}
 
 	public function edit($id)
@@ -66,7 +67,11 @@ class AcervoController extends Controller {
 
 	public function destroy($id)
 	{
-		//
+		Acervo::find($id)->delete();
+
+		Flash::success('Registro excluído com sucesso!');
+
+		return redirect()->action('AcervoController@index');
 	}
 
 

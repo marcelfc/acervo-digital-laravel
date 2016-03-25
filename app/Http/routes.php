@@ -48,6 +48,18 @@ Route::group(['middleware' => 'auth'], function () {
 
 	]);
 
+	Route::resource('imagem', 'ImagemController', [
+
+		'index' => 'imagem.index',
+		'create' => 'imagem.create',
+		'store' => 'imagem.store',
+		'show' => 'imagem.show',
+		'edit' => 'imagem.edit',
+		'update' => 'imagem.update',
+		'destroy' => 'imagem.destroy',
+
+	]);
+
 	Route::get('/acervo/delete/{id}', 'AcervoController@delete');
 	Route::get('/user/delete/{id}', 'UserController@delete');
 	Route::get('/admin/teste', 'AcervoController@teste');
