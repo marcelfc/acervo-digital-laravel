@@ -8,7 +8,7 @@
 
         <div class="panel-body">
     @if(empty($rows[0]))
-        <h3 class="alert alert-danger">Ops! Nenhum dado foi encontrado:( </h3>
+        <h3 align="center" class="alert alert-danger">Ops! Nenhum dado foi encontrado:( </h3>
     @else
        @include('admin.acervo.partials.search')
 

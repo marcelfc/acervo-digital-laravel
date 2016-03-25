@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="author" content="Dmitry Semenov">
-	<title>Acervo Digital</title>
+	<meta name="author" content="Yellow Tecnologia -- www.yellowti.com">
+	<title>Acervo Digital - SISTEMA DE GERENCIAMENTO DE ACERVO DIGITAL - YELLOW TECNOLOGIA</title>
 	<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
@@ -106,6 +106,7 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.js"></script>
 
+	<script src="/js/admin/dropzone_custom.js"></script>
 	<script src="/js/admin/modal.js"></script>
 
 </body>

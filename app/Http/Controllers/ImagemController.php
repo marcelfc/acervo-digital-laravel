@@ -29,7 +29,8 @@ class ImagemController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return view('admin.imagens.create')
+			->with('title', 'Adicionar Imagem');
 	}
 
 	/**
@@ -39,7 +40,7 @@ class ImagemController extends Controller {
 	 */
 	public function store()
 	{
-		//
+		var_dump(Input::all());
 	}
 
 	/**
