@@ -1,0 +1,82 @@
+
+nav.navbar.navbar-default{
+    background-color: #3CB371	;
+    border-color: #3CB371	;
+    margin-top: 10px;
+}
+
+nav.navbar.navbar-default a {
+    color: white;
+}
+
+li p.navbar-text, a.navbar-brand {
+    color: white!important;
+    font-weight: bolder;
+}
+
+footer.footer {
+    background-color: #3CB371;
+    border-color: #3CB371;
+    margin-top: 55px;
+    color: white;
+    border-radius: 5px;
+}
+
+footer.footer p {
+    padding: 10px;
+}
+.dropdown-menu {
+    background-color: #3CB371;
+}
+.dropdown-menu > li > a {
+    color: #3CB371;
+}
+
+.dropdown-menu > li > a:hover{
+    background-color: #8FBC8F;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    background-color: #8FBC8F;
+    color: #555555;
+}
+
+.panel-default > .panel-heading {
+    color: #FFFFFF;
+    background-color: #8FBC8F;
+    border-color: #dddddd;
+}
+
+.btn-default {
+    margin-right: 10px;
+}
+
+.btn-info {
+    margin-right: 10px;
+}
+
+.btn-primary {
+    background-color: #3CB371;
+    border-color: #3CB371;
+}
+
+.btn-primary:hover {
+    background-color: #8FBC8F;
+    border-color: #8FBC8F;
+}
+
+
+#form-search{
+    margin-left: 30%;
+}
+
+#table_galeria{
+    margin-top: 40px;
+    margin-left: 12.5%;
+    background-color: #ffffff;
+    width: 75%;
+}
+
+
