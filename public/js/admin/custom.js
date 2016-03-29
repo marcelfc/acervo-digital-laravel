@@ -1,5 +1,23 @@
+function _GET(name)
+{
+    var url   = window.location.search.replace("?", "");
+    var itens = url.split("&");
+
+    for(n in itens)
+    {
+        if( itens[n].match(name) )
+        {
+            return decodeURIComponent(itens[n].replace(name+"=", ""));
+        }
+    }
+    return null;
+}
+
+
+
 $(document).ready(function() {
-    
+    var param_sessid = _GET("acervo");
+
     //Example 1
     $('#filer_input').filer({
 		showThumbs: true
@@ -75,7 +93,7 @@ $(document).ready(function() {
             drop: null,
         },
         uploadFile: {
-            url: "/php/upload.php",
+            url: "/php/upload.php?acervo=" + param_sessid ,
             data: null,
             type: 'POST',
             enctype: 'multipart/form-data',
@@ -108,7 +126,7 @@ $(document).ready(function() {
         afterShow: null,
         onRemove: function(itemEl, file, id, listEl, boxEl, newInputEl, inputEl){
             var file = file.name;
-            $.post('./php/remove_file.php', {file: file});
+            $.post('/php/remove_file.php', {file: file});
         },
         onEmpty: null,
         options: null,

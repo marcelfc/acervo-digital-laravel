@@ -1,5 +1,6 @@
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+<input type="hidden" name="acervo" value="{{$_GET['acervo']}}">
 
 <div class="form-group">
     <label class="col-md-4 control-label">Classificação:</label>
@@ -27,7 +28,7 @@
 <div class="form-group">
     <label class="col-md-4 control-label">Descrição</label>
     <div class="col-md-4">
-        <textarea class="form-control" name="descricao" value="{{ old('descricao', !empty($row) ? $row->descricao : '') }}" >{{ old('descricao', !empty($row) ? $row->descricao : '') }}</textarea>
+        <textarea rows="4" cols="50" class="form-control" name="descricao" value="{{ old('descricao', !empty($row) ? $row->descricao : '') }}" >{{ old('descricao', !empty($row) ? $row->descricao : '') }}</textarea>
     </div>
 </div>
 <div class="form-group">
@@ -69,7 +70,7 @@
 </div>
 <div class="form-group">
     <div class="col-md-6 col-md-offset-3">
-        <input type="file" name="files" id="filer_input2" multiple="multiple">
+        <input type="file" name="files" id="filer_input2">
     </div>
 </div>
 <div class="form-group">

@@ -8,6 +8,7 @@
         <div class="panel-body">
 
             <form  class="dropzone form-horizontal" method="post" action="{{ route('imagem.store') }}" enctype="multipart/form-data">
+
                 @include('admin.imagens.partials.form')
 
             </form>

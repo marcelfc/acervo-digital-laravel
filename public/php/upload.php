@@ -2,12 +2,14 @@
     include('class.uploader.php');
     
     $uploader = new Uploader();
+    $uploader_directory = '../uploads/'.$_GET['acervo'] .'/';
+    //var_dump($uploader_directory);die;
     $data = $uploader->upload($_FILES['files'], array(
         'limit' => 1, //Maximum Limit of files. {null, Number}
         'maxSize' => 20, //Maximum Size of files {null, Number(in MB's)}
-        'extensions' => null, //Whitelist for file extension. {null, Array(ex: array('jpg', 'png'))}
+        'extensions' => array('jpg', 'png'), //Whitelist for file extension. {null, Array(ex: array('jpg', 'png'))}
         'required' => true, //Minimum one file is required for upload {Boolean}
-        'uploadDir' => '../uploads/', //Upload directory {String}
+        'uploadDir' => $uploader_directory, //Upload directory {String}
         'title' => array('name'), //New file name {null, String, Array} *please read documentation in README.md
         'removeFiles' => true, //Enable file exclusion {Boolean(extra for jQuery.filer), String($_POST field name containing json data with file names)}
         'perms' => null, //Uploaded file permisions {null, Number}
@@ -31,7 +33,7 @@
     
     function onFilesRemoveCallback($removed_files){
         foreach($removed_files as $key=>$value){
-            $file = '../uploads/' . $value;
+            $file = '../uploads/'.$_GET['acervo']. '/' . $value;
             if(file_exists($file)){
                 unlink($file);
             }

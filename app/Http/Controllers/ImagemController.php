@@ -29,6 +29,7 @@ class ImagemController extends Controller {
 	 */
 	public function create()
 	{
+
 		return view('admin.imagens.create')
 			->with('title', 'Adicionar Imagem');
 	}
@@ -38,9 +39,9 @@ class ImagemController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Requests\ImagemRequest $request)
 	{
-		var_dump($_FILES, $_POST);
+		var_dump($request->all());
 	}
 
 	/**

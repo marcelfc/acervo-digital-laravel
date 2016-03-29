@@ -9,7 +9,7 @@
         <div class="panel-body">
 
             <div align="center">
-                <a class="btn btn-warning btn-lg" href="{{route('imagem.create')}}">Adicionar Imagem ao acervo</a>
+                <a class="btn btn-warning btn-lg" href="{{route('imagem.create',['acervo' => $_GET['acervo']])}}">Adicionar Imagem ao acervo</a>
             </div>
 
             @if(empty($rows[0]))

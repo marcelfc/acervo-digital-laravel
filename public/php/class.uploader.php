@@ -17,7 +17,7 @@ class Uploader {
         'maxSize' => 20,
         'extensions' => null,
         'required' => true,
-        'uploadDir' => 'uploads/',
+        'uploadDir' => 'uploads/' ,
         'title' => array('auto', 10),
         'removeFiles' => true,
         'perms' => null,
