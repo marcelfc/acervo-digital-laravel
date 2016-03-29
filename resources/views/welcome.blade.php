@@ -40,8 +40,8 @@
 	<body>
 		<div class="container">
 			<div class="content">
-				<div class="title">Laravel 5</div>
-				<div class="quote">{{ Inspiring::quote() }}</div>
+				<div class="title">Sistema em Construção.</div>
+				<div class="quote"> Yellow Tecnologia -- www.yellowti.com</div>
 			</div>
 		</div>
 	</body>

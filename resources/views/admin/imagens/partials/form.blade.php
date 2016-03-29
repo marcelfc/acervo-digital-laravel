@@ -1,13 +1,5 @@
-
-
-<div class="form-group">
-    <div class="col-md-6 col-md-offset-3">
-        <div id="dropzonePreview" >
-
-
-        </div>
-    </div>
-</div>
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+<input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
 <div class="form-group">
     <label class="col-md-4 control-label">Classificação:</label>
@@ -75,10 +67,14 @@
         <input class="form-control" type="text" name="nomes" value="{{ old('nomes', !empty($row) ? $row->nomes : '') }}"/>
     </div>
 </div>
-
+<div class="form-group">
+    <div class="col-md-6 col-md-offset-3">
+        <input type="file" name="files" id="filer_input2" multiple="multiple">
+    </div>
+</div>
 <div class="form-group">
     <div class="col-md-4 col-md-offset-4">
-        <button type="submit" id="sbmtbtn" class="btn btn-primary"> Cadastrar  <i class="glyphicon glyphicon-floppy-disk"></i></button>
+        <button type="submit" id="submit-all" class="btn btn-primary"> Cadastrar  <i class="glyphicon glyphicon-floppy-disk"></i></button>
     </div>
 </div>
 

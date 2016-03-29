@@ -13,7 +13,10 @@
 	<link href="{{ asset('/photoswipe/dist/default-skin/default-skin.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/dropzone.css') }}" rel="stylesheet">
+	<link href="{{asset('/css/jquery.filer.css')}}" type="text/css" rel="stylesheet" />
+	<link href="{{asset('/css/themes/jquery.filer-dragdropbox-theme.css')}}" type="text/css" rel="stylesheet" />
+
+
 
 
 	<!-- Fonts -->
@@ -104,9 +107,9 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.js"></script>
+	<script type="text/javascript" src="/js/admin/jquery.filer.min.js?v=1.0.5"></script>
+	<script type="text/javascript" src="/js/admin/custom.js?v=1.0.5"></script>
 
-	<script src="/js/admin/dropzone_custom.js"></script>
 	<script src="/js/admin/modal.js"></script>
 
 </body>

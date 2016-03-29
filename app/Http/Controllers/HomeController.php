@@ -28,17 +28,18 @@ class HomeController extends Controller {
 
 	public function index()
 	{
-		$rows = Acervo::all()->sortByDesc('id')->take(6);
-		foreach($rows as $row)
-		{
-			$files = File::allFiles('uploads/' .$row->nome_arquivo);
-			$data[$row->id]['files'] = $files[0]->getPathName();
-			$data[$row->id]['legendas'] = $row->titulo;
-			$data[$row->id]['id'] = $row->id;
-		}
-
-
-		return view('front_user.index')->with('data',$data);
+//		$rows = Acervo::all()->sortByDesc('id')->take(6);
+//		foreach($rows as $row)
+//		{
+//			$files = File::allFiles('uploads/' .$row->nome_arquivo);
+//			$data[$row->id]['files'] = $files[0]->getPathName();
+//			$data[$row->id]['legendas'] = $row->titulo;
+//			$data[$row->id]['id'] = $row->id;
+//		}
+//
+//
+//		return view('front_user.index')->with('data',$data);
+		return view('welcome');
 	}
 
 

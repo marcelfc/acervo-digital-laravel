@@ -40,7 +40,7 @@ class ImagemController extends Controller {
 	 */
 	public function store()
 	{
-		var_dump(Input::all());
+		var_dump($_FILES, $_POST);
 	}
 
 	/**
@@ -51,7 +51,7 @@ class ImagemController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		die('dewes');
 	}
 
 	/**

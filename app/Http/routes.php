@@ -60,10 +60,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 	]);
 
-	Route::get('/acervo/delete/{id}', 'AcervoController@delete');
 	Route::get('/user/delete/{id}', 'UserController@delete');
 	Route::get('/admin/teste', 'AcervoController@teste');
-	Route::get('/admin/file_upload', 'AcervoController@file_upload');
+	Route::post('/admin/file_upload', 'ImagemController@file_upload');
 	Route::post('/acervo/file_upload', 'AcervoController@file_upload');
 	Route::get('/admin', 'AdminController@index');
 
