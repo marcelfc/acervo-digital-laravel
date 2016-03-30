@@ -4,7 +4,7 @@
 
     <div class="panel panel-default">
 
-        <div class="panel-heading">{{ $title }}</div>
+        <div class="panel-heading"><b>{{ $title }}</b></div>
 
         <div class="panel-body">
     @if(empty($rows[0]))

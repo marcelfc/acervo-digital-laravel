@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Imagem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Laracasts\Flash\Flash;
+use Illuminate\Support\Facades\Redirect;
 
 class ImagemController extends Controller {
 
@@ -41,7 +43,21 @@ class ImagemController extends Controller {
 	 */
 	public function store(Requests\ImagemRequest $request)
 	{
-		var_dump($request->all());
+
+		$data = $request->all();
+
+		foreach($data['nome_arquivo'] as $file)
+		{
+			$row = $data;
+			$row['nome_arquivo'] = $file;
+			$row['acervo_id'] = $data['acervo'];
+			Imagem::create($row);
+		}
+
+		Flash::success('Imagens adicionadas sucesso!');
+		return Redirect::route('imagem.index', array('acervo' => $data['acervo']));
+
+
 	}
 
 	/**

@@ -70,7 +70,7 @@
 </div>
 <div class="form-group">
     <div class="col-md-6 col-md-offset-3">
-        <input type="file" name="files" id="filer_input2">
+        <input type="file" name="files[]" id="filer_input2" multiple="multiple">
     </div>
 </div>
 <div class="form-group">

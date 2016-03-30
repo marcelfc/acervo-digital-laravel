@@ -25,8 +25,8 @@ $(document).ready(function() {
     
     //Example 2
     $("#filer_input2").filer({
-        limit: null,
-        maxSize: null,
+        limit: 3,
+        maxSize: 20,
         extensions: null,
         changeInput: '<div class="jFiler-input-dragDrop"><div class="jFiler-input-inner"><div class="jFiler-input-icon"><i class="icon-jfi-cloud-up-o"></i></div><div class="jFiler-input-text"><h3>Arraste o arquivo até aqui</h3> <span style="display:inline-block; margin: 15px 0">ou</span></div><a class="jFiler-input-choose-btn blue">Procure o Arquivo</a></div></div>',
         showThumbs: true,
@@ -41,6 +41,7 @@ $(document).ready(function() {
                                     <div class="jFiler-item-info">\
                                         <span class="jFiler-item-title"><b title="{{fi-name}}">{{fi-name | limitTo: 25}}</b></span>\
                                         <span class="jFiler-item-others">{{fi-size2}}</span>\
+                                        <input type="hidden" name="nome_arquivo[]" value= "{{fi-name}}"/>\
                                     </div>\
                                     {{fi-image}}\
                                 </div>\
@@ -101,13 +102,13 @@ $(document).ready(function() {
             success: function(data, el){
                 var parent = el.find(".jFiler-jProgressBar").parent();
                 el.find(".jFiler-jProgressBar").fadeOut("slow", function(){
-                    $("<div class=\"jFiler-item-others text-success\"><i class=\"icon-jfi-check-circle\"></i> Success</div>").hide().appendTo(parent).fadeIn("slow");    
+                    $("<div class=\"jFiler-item-others text-success\"><i class=\"icon-jfi-check-circle\"></i> Success</div>").hide().appendTo(parent).fadeIn("slow");
                 });
             },
             error: function(el){
                 var parent = el.find(".jFiler-jProgressBar").parent();
                 el.find(".jFiler-jProgressBar").fadeOut("slow", function(){
-                    $("<div class=\"jFiler-item-others text-error\"><i class=\"icon-jfi-minus-circle\"></i> Error</div>").hide().appendTo(parent).fadeIn("slow");    
+                    $("<div class=\"jFiler-item-others text-error\"><i class=\"icon-jfi-minus-circle\"></i> Error</div>").hide().appendTo(parent).fadeIn("slow");
                 });
             },
             statusCode: null,
